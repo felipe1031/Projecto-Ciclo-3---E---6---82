@@ -1,0 +1,44 @@
+<% include partials/_header %>
+
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form action="/edit/<%= user._id %>" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="nick" placeholder="nick">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="correo" placeholder="correo">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="password" placeholder="password">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="nombres" placeholder="nombres">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="edad" placeholder="edad">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="peso" placeholder="peso">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="genero" placeholder="genero">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="objetivo" placeholder="objetivo">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Update 
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/_footer%>

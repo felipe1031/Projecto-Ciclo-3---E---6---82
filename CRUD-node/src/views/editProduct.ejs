@@ -1,0 +1,32 @@
+<% include partials/_header %>
+
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form action="/editProduct/<%= product._id %>" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="nombre" placeholder="nombre">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="categoria" placeholder="categoria">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="peso" placeholder="peso">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="calorias" placeholder="descripcion">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Update 
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/_footer%>

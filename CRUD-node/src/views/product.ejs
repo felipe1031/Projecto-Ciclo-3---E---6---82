@@ -1,0 +1,73 @@
+<% include partials/_header %>
+
+<div class="container">
+
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form action="/addProduct" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="nombre" placeholder="nombre">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="categoria" placeholder="categoria">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="peso" placeholder="peso">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="calorias" placeholder="calorias">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="descripcion" placeholder="descripcion">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Agregar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIST -->
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Peso</th>
+            <th>Calorías</th>
+            <th>Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < product.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><strong><%= user[i].nombre %></strong></td>
+              <td><%= product[i].categoria %></td>
+              <td><%= product[i].peso %></td>
+              <td><%= product[i].calorias %></td>
+              <td><%= product[i].descripcion %></td>
+              <td>
+                <a href="/delete/<%= product[i]._id %>"
+                  class="btn btn-danger">
+                  Eliminar
+                </a>
+               <a href="/editProduct/<%= product[i]._id %>" class="btn btn-info">
+                  Edit
+                </a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
