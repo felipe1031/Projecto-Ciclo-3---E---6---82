@@ -17,6 +17,15 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
 
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+}  
+
 //Script para navegacion entre forms dentro del index//
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");    
@@ -47,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordForgottenForm.classList.add("form--hidden");
         loginForm.classList.remove("form--hidden");
     });
+
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
